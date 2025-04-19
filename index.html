@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #6c63ff;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-color: #f8f9fa;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-right: 15px;
+        }
+        
+        .btn:hover {
+            background-color: #5a52d5;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        /* About section */
+        .about {
+            background-color: #fff;
+        }
+        
+        /* Poetry section */
+        .poetry {
+            background-color: #f8f9fa;
+        }
+        
+        .poetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .poetry-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .poetry-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .poetry-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .poetry-content {
+            padding: 20px;
+        }
+        
+        .poetry-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Projects section */
+        .projects {
+            background-color: #fff;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            list-style: none;
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links li {
+            margin-right: 15px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .projects-grid,
+            .poetry-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">My Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#poetry">Poetry Notes</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to My Portfolio</h1>
+                <p>A showcase of my coding projects and poetic explorations. Here, technology meets creativity as I document my journey through code and verse.</p>
+                <a href="#poetry" class="btn">Read Poetry Notes</a>
+                <a href="#projects" class="btn">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>I'm a passionate developer with a love for both technology and poetry. This portfolio showcases my technical projects alongside my reflections on poems that have touched me. I believe in the power of interdisciplinary thinking, where the precision of code meets the expressiveness of poetry.</p>
+            <br>
+            <p>Through my work, I aim to build bridges between the technical and the artistic, finding inspiration in both realms to create meaningful experiences.</p>
+        </div>
+    </section>
+
+    <!-- Poetry Notes section -->
+    <section id="poetry" class="section poetry">
+        <div class="container">
+            <h2 class="section-title">Poetry Notes</h2>
+            <div class="poetry-grid">
+                <!-- Poetry Entry 1 -->
+                <div class="poetry-card">
+                    <img src="/api/placeholder/400/320" alt="Poem visual representation">
+                    <div class="poetry-content">
+                        <h3>"The Road Not Taken"</h3>
+                        <p>Robert Frost</p>
+                        <a href="poetry-journal/road-not-taken.html" class="btn">Read Journal</a>
+                    </div>
+                </div>
+                
+                <!-- Poetry Entry 2 -->
+                <div class="poetry-card">
+                    <img src="/api/placeholder/400/320" alt="Poem visual representation">
+                    <div class="poetry-content">
+                        <h3>"Invictus"</h3>
+                        <p>William Ernest Henley</p>
+                        <a href="poetry-journal/invictus.html" class="btn">Read Journal</a>
+                    </div>
+                </div>
+                
+                <!-- Poetry Entry 3 -->
+                <div class="poetry-card">
+                    <img src="/api/placeholder/400/320" alt="Poem visual representation">
+                    <div class="poetry-content">
+                        <h3>"Hope is the thing with feathers"</h3>
+                        <p>Emily Dickinson</p>
+                        <a href="poetry-journal/hope-feathers.html" class="btn">Read Journal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Project screenshot">
+                    <div class="project-content">
+                        <h3>Weather Analysis App</h3>
+                        <p>A data visualization tool that analyzes weather patterns and presents them in an interactive dashboard.</p>
+                        <a href="projects/weather-analysis.html" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Project screenshot">
+                    <div class="project-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>A full-stack e-commerce solution with user authentication, product catalog, and payment processing.</p>
+                        <a href="projects/ecommerce-platform.html" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Project screenshot">
+                    <div class="project-content">
+                        <h3>Machine Learning Model</h3>
+                        <p>A predictive model that uses ML algorithms to forecast market trends based on historical data.</p>
+                        <a href="projects/ml-market-trends.html" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section about">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Interested in collaborating on a project or discussing poetry? Feel free to reach out to me through any of the platforms below.</p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+                <a href="https://github.com/yourusername" class="btn">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>My Portfolio</h3>
+                    <p>A collection of coding projects and poetry reflections.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#poetry">Poetry Notes</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <p>Follow me on social media for updates.</p>
+                    <ul class="social-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
