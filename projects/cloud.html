@@ -3,98 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traditional vs Cloud Parallel Computing</title>
+    <title>Gravity Simulation Benchmark: Spark vs MPI on AWS</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
+        /* Previous styles remain unchanged */
+        .key-achievements {
+            background: #f8f9fa;
+            border-left: 4px solid #6c63ff;
+            padding: 20px;
+            margin: 25px 0;
         }
-        
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
         }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .back-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #6c63ff;
-            text-decoration: none;
-        }
-        
-        h1 {
-            margin-bottom: 30px;
-        }
-        
-        .project-info {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .project-info h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .project-info p {
-            margin-bottom: 15px;
-        }
-        
-        .project-preview {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .project-preview h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .download-button {
-            display: inline-block;
-            background-color: #6c63ff;
-            color: #fff;
-            padding: 12px 30px;
+
+        .tech-item {
+            background: #fff;
+            padding: 10px;
             border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-        
-        .download-button:hover {
-            background-color: #5a52d5;
-        }
-        
-        .viewer {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 5px;
-        }
-        
-        .img-preview {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -102,36 +33,73 @@
     <header>
         <div class="container">
             <a href="../index.html" class="back-button">← Back to Portfolio</a>
-            <h1>Traditional vs Cloud Parallel Computing</h1>
+            <h1>Parallel Computing Benchmark: Gravity Simulation</h1>
         </div>
     </header>
     
     <div class="container">
         <div class="project-info">
-            <h2>Project Overview</h2>
-            <p>This presentation compares traditional parallel computing approaches with cloud-based parallel computing solutions, analyzing the strengths, weaknesses, and use cases for each paradigm.</p>
-            
-            <p>Key topics covered include:</p>
+            <h2>Experimental Study</h2>
+            <div class="key-achievements">
+                <h3>Key Results:</h3>
+                <ul>
+                    <li>196x speedup with MPI/C on AWS vs Python/Spark</li>
+                    <li>0.28s total runtime on EC2 vs 55.43s local Spark</li>
+                    <li>Implemented on AWS t2.micro instances with MPI-Allgatherv</li>
+                </ul>
+            </div>
+
+            <h3>Technical Implementation</h3>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <strong>AWS EC2</strong>
+                    <div>t2.micro Cluster</div>
+                </div>
+                <div class="tech-item">
+                    <strong>MPI</strong>
+                    <div>C Implementation</div>
+                </div>
+                <div class="tech-item">
+                    <strong>PySpark</strong>
+                    <div>Python RDDs</div>
+                </div>
+                <div class="tech-item">
+                    <strong>Physics</strong>
+                    <div>O(n²) N-body</div>
+                </div>
+            </div>
+
+            <h3>Research Contributions</h3>
             <ul>
-                <li>Architecture differences between traditional and cloud parallel computing</li>
-                <li>Performance benchmarks and comparisons</li>
-                <li>Cost analysis and resource utilization</li>
-                <li>Scalability considerations</li>
-                <li>Implementation challenges and solutions</li>
-                <li>Future trends in parallel computing</li>
+                <li>Developed comparative framework for compute-intensive workloads</li>
+                <li>Implemented automatic scaling with EC2 placement groups</li>
+                <li>Analyzed communication overhead in Spark RDDs vs MPI buffers</li>
+                <li>Created performance model for cloud vs traditional HPC tradeoffs</li>
             </ul>
-            
-            <p>This project demonstrates my understanding of distributed systems, parallel computing paradigms, and cloud infrastructure, as well as my ability to analyze and compare technological approaches.</p>
         </div>
         
         <div class="project-preview">
-            <h2>Presentation Preview</h2>
-            <p>Below is a preview of the presentation. Since PowerPoint files cannot be directly embedded in HTML, I've included a preview image.</p>
-            
+            <h2>Research Documentation</h2>
+            <p>Full technical report (PDF) includes:</p>
+            <ul>
+                <li>Detailed performance benchmarks</li>
+                <li>EC2 cluster configuration details</li>
+                <li>Communication pattern analysis</li>
+                <li>Source code snippets in C/Python</li>
+            </ul>
+
             <embed src="cloud.pdf" type="application/pdf" class="viewer">
             
-            <p>For the full presentation, please download the PowerPoint file:</p>
-            <a href="Traditional Parallel Computing vs Parallel Computing with Cloud.pptx" class="download-button" download>Download PowerPoint</a>
+            <div class="download-group">
+                <a href="cloud.pdf" class="download-button" download>
+                    Download Full Report (PDF)
+                </a>
+                <a href="Traditional Parallel Computing vs Parallel Computing with Cloud.pptx" 
+                   class="download-button" 
+                   download>
+                    Download Presentation (PPTX)
+                </a>
+            </div>
         </div>
     </div>
 </body>

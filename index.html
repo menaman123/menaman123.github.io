@@ -284,7 +284,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Welcome to My Portfolio</h1>
-                <p>A showcase of my coding projects and poetic explorations. Here, technology meets creativity as I document my journey through code and verse.</p>
+                <p>A showcase of my coding projects and poetic explorations. Take a look at both my coding journey and the manifestation of my thoughts!</p>
                 <a href="#poetry" class="btn">Read Poetry Notes</a>
                 <a href="#projects" class="btn">View Projects</a>
             </div>
@@ -318,7 +318,7 @@
                 
                 <!-- Poetry Entry 2 -->
                 <div class="poetry-card">
-                    <img src="../assets\english-2.png" alt="Poem visual representation">
+                    <img src="..\assets/english-2.png" alt="Poem visual representation">
                     <div class="poetry-content">
                         <h3>"Poem 2"</h3>
                         <p>Pablo Neruda</p>
@@ -334,51 +334,82 @@
     <!-- Projects section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Research Projects</h2>
             <div class="projects-grid">
-                <!-- Cloud Computing Project -->
+                <!-- Cloud Computing Comparison -->
                 <div class="project-card">
-                    <img src="/images/cloud-computing.png" alt="Cloud architecture diagram">
+                    <img src="/images/cloud-architecture.png" alt="AWS EC2 cluster diagram">
                     <div class="project-content">
-                        <h3>Cloud Computing Comparison</h3>
-                        <p>Comparative analysis of traditional parallel computing vs. cloud-based solutions with performance benchmarks and cost analysis.</p>
-                        <a href="projects/cloud.html" class="btn">View Project</a>
-                        <a href="projects/Traditional Parallel Computing vs Parallel Computing with Cloud.pptx" class="btn" download>Download Presentation</a>
-                    </div>
-                </div>
-    
-                <!-- Distributed Deep Learning -->
-                <div class="project-card">
-                    <img src="/images/ddl-system.png" alt="Neural network visualization">
-                    <div class="project-content">
-                        <h3>Distributed Deep Learning System</h3>
-                        <p>Implemented a distributed deep learning framework for image denoising using PyTorch and Perlmutter.</p>
-                        <a href="projects/ddl.html" class="btn">View Project</a>
-                        <a href="projects/DDL Final Report.pdf" class="btn" download>Download Report</a>
-                    </div>
-                </div>
-    
-                <!-- RFID Project -->
-                <div class="project-card">
-                    <img src="/images/rfid-system.png" alt="RFID inventory management">
-                    <div class="project-content">
-                        <h3>RFID Inventory Management</h3>
-                        <p>RFID Sensing</p>
-                        <a href="projects/rfid.html" class="btn">View Project</a>
-                        <a href="projects/rfid.pdf" class="btn" download>White Paper</a>
-                    </div>
-                </div>
-    
-                <!-- Reinforcement Learning Projects -->
-                <div class="project-card">
-                    <img src="/images/rl-projects.png" alt="Reinforcement learning visualization">
-                    <div class="project-content">
-                        <h3>Reinforcement Learning Research</h3>
-                        <p>Series of RL projects including multi-agent systems and deep Q-networks applications.</p>
+                        <h3>Parallel Computing Benchmark: Spark vs MPI on AWS</h3>
+                        <p>Comparative analysis of gravity simulation performance between traditional pySpark implementation and cloud-optimized MPI on AWS EC2 infrastructure.</p>
+                        <div class="project-details">
+                            <h4>Key Contributions:</h4>
+                            <ul>
+                                <li>Developed O(n²) particle trajectory simulator with both Python/Spark and C/MPI implementations</li>
+                                <li>Achieved 196x speedup using MPI on AWS t2.micro instances</li>
+                                <li>Implemented automatic scaling with EC2 placement groups</li>
+                            </ul>
+                        </div>
                         <div class="project-links">
-                            <a href="projects/rl-final.html" class="btn">Final Project</a>
-                            <a href="projects/rl-project.html" class="btn">Traffic Optimization</a>
-                            <a href="projects/RL_Final_Project_Antonio_mena.pdf" class="btn" download>Research Paper</a>
+                            <a href="projects/cloud.html" class="btn">Case Study</a>
+                            <a href="projects/cloud.pdf" class="btn" download>Full Report</a>
+                            <a href="projects/Traditional Parallel Computing vs Parallel Computing with Cloud.pptx" class="btn" download>Presentation</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- RFID Monitoring System -->
+                <div class="project-card">
+                    <img src="/images/rfid-dashboard.png" alt="Sensor data dashboard">
+                    <div class="project-content">
+                        <h3>IoT Environmental Monitoring with RFID</h3>
+                        <p>Real-time ambient data collection system using PIPtag RFID sensors with automated email alerts and mean-filtered data visualization.</p>
+                        <div class="project-details">
+                            <h4>Technical Features:</h4>
+                            <ul>
+                                <li>Linux VM data pipeline with libusb C drivers</li>
+                                <li>Node.js server with socket.io real-time updates</li>
+                                <li>Nodemailer threshold alerts with Gmail OAuth2</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects/rfid.html" class="btn">System Demo</a>
+                            <a href="projects/rfid.pdf" class="btn" download>Technical White Paper</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Reinforcement Learning Research -->
+                <div class="project-card">
+                    <img src="/images/rl-convergence.png" alt="Policy iteration convergence graph">
+                    <div class="project-content">
+                        <h3>Optimal Control Through RL Policy Iterations</h3>
+                        <p>Advanced research in reinforcement learning applications for dynamic systems control and game theory.</p>
+                        <div class="project-details">
+                            <h4>Key Studies:</h4>
+                            <div class="research-columns">
+                                <div>
+                                    <h5>Zero-Sum Differential Games</h5>
+                                    <ul>
+                                        <li>Compared Lyapunov vs Riccati iterations (25 vs 45 steps convergence)</li>
+                                        <li>Implemented algebraic Riccati solver in MATLAB</li>
+                                        <li>Analyzed pursuit-evasion and cybersecurity applications</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Caltech Ducted Fan Control</h5>
+                                    <ul>
+                                        <li>Vaisbord-Milhstein RL algorithm implementation</li>
+                                        <li>18-iteration convergence to LQ optimal control</li>
+                                        <li>6DOF system stabilization with Q=I₆, R=I₂</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects/rl-final.html" class="btn">Game Theory Paper</a>
+                            <a href="projects/rl-project.html" class="btn">Control Systems</a>
+                            <a href="projects/RL_Final_Project_Antonio_mena.pdf" class="btn" download>Full Dissertation</a>
                         </div>
                     </div>
                 </div>
