@@ -36,19 +36,22 @@
         h1 {
             margin-bottom: 30px;
         }
-        
+
+        /* Keep all existing styles, just modify these */
         .poem-container {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            /* Remove overflow: hidden */
             margin-bottom: 40px;
         }
-        
+
         .poem-image {
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
+            height: auto; /* Changed from max-height */
+            object-fit: contain; /* Changed from cover */
+            display: block;
+            margin: 0 auto;
         }
         
         .poem-content {
